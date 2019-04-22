@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    volumes:
+      - myvolume:/data/latha
+    networks:
+      - mynetwork
+  mongo-express:
+    image: mongo-express
+    volumes:
+      - myvolume:/test
+    networks:
+      - mynetwork
+volumes:
+  myvolume:
+    external: true
+networks:
+  mynetwork:
+    external: true
